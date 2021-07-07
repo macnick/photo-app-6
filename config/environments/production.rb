@@ -63,6 +63,16 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "photo_app_6_production"
 
   config.action_mailer.perform_caching = false
+  
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => Rails.application.credentials.dig(:user_name),
+    :password => Rails.application.credentials.dig(:password),
+    :domain => 'heroku.com',
+    :enable_starttls_auto => true
+  }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.default_url_options = { :host => 'photoapp-39104.herokuapp.com', :protocol => 'https'}
