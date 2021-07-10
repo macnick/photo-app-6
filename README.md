@@ -1,6 +1,6 @@
 # PhotoApp with Rails 6
 
-Things you may want to cover:
+This is a project from the Udemy's Ruby on Rails course.
 
 - Ruby version
 
