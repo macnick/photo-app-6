@@ -1,8 +1,8 @@
 # PhotoApp with Rails 6
 
-This is a project from the Udemy's Ruby on Rails course.
+This is a project from the Udemy's Ruby on Rails course. I recreated it using Ruby on Rails 6.1.3.
 
-- Ruby version
+- Ruby 2.7.1
 
 - System dependencies
 
