@@ -64,16 +64,6 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   
-  ActionMailer::Base.smtp_settings = {
-    :user_name => Rails.application.credentials.sendgrid[:user_name],
-    :password => Rails.application.credentials.sendgrid[:password],
-    :domain => 'heroku.com',
-    :address => 'smtp.sendgrid.net',
-    :port => '587',
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
-  
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.default_url_options = { :host => 'photoapp-39104.herokuapp.com', :protocol => 'https'}

@@ -14,16 +14,6 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  ActionMailer::Base.smtp_settings = {
-    :user_name => Rails.application.credentials.sendgrid[:user_name],
-    :password => Rails.application.credentials.sendgrid[:password],
-    :domain => 'heroku.com',
-    :address => 'smtp.sendgrid.net',
-    :port => '587',
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
-
   config.action_mailer.delivery_method = :test
 
   config.action_mailer.default_url_options = { :host => 'http://localhost:3000', :protocol => 'http' }
