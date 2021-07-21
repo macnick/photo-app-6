@@ -8,10 +8,7 @@ import Turbolinks from 'turbolinks';
 import * as ActiveStorage from '@rails/activestorage';
 import 'channels';
 import '@doabit/semantic-ui-sass';
-import 'stylesheets/semantic-ui.scss';
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
-
-// // if you wan't to use custom variables, you should import custom styelesheet
