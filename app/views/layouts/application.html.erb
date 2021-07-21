@@ -12,6 +12,21 @@
 
   <body>
     <%= render 'layouts/navigation' %>
+    <div class="ui relaxed equal width grid">
+      <div class="ui row">
+        <div class="ui four wide column">
+        </div>
+        <div class="ui eight wide column">
+          <% flash.each do |key, value|%>
+            <!-- <div class="<%= flash_class(key) %> closable"> -->
+            <div class="ui green message closable">
+              <i class = "close icon"></i>
+              <%= value %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
