@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   
   ActionMailer::Base.smtp_settings = {
-  :user_name => Rails.application.credentials.dig(:sendgrid, :user_name),
+  :user_name => 'apikey',
   :password => Rails.application.credentials.dig(:sendgrid, :password),
   :domain => 'heroku.com',
   :address => 'smtp.sendgrid.net',
