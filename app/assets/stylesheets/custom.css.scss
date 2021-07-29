@@ -6,3 +6,8 @@
   @extend .field;
   @extend .error;
 }
+
+.jumbotron {
+  text-align: center;
+  background-image: asset-url('meeting.png');
+}
