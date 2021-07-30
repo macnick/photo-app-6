@@ -7,7 +7,11 @@
   @extend .error;
 }
 
-.jumbotron {
+.segment.jumbotron {
   text-align: center;
   background-image: asset-url('meeting.png');
+  background-size: cover;
+  color: #000;
+  font-size: xx-large;
+  height: 350px;
 }
