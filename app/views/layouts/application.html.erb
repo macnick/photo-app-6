@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
   </head>
-
   <body>
     <%= render 'layouts/navigation' %>
     <div class="ui relaxed equal width grid">
       <div class="ui row">
-        <div class="ui four wide column">
-        </div>
-        <div class="ui eight wide column">
+        <div class="ui three wide column"></div>
+        <div class="ui ten wide column">
           <% flash.each do |key, value|%>
             <!-- <div class="<%= flash_class(key) %> closable"> -->
             <div class="ui green message closable">
@@ -26,6 +23,7 @@
             </div>
           <% end %>
         </div>
+        <div class="ui three wide column"></div>
       </div>
     </div>
     <%= yield %>
