@@ -6,25 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
+    <%= javascript_include_tag 'https://js.stripe.com/v3/' %>
+    <%= javascript_include_tag 'https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <%= render 'layouts/navigation' %>
     <div class="ui relaxed equal width grid">
-      <div class="ui row">
-        <div class="ui three wide column"></div>
-        <div class="ui ten wide column">
-          <% flash.each do |key, value|%>
+      <div class="ui row"></div>
+      <% flash.each do |key, value|%>
+        <div class="ui row">
+          <div class="ui three wide column"></div>
+          <div class="ui ten wide column">
             <!-- <div class="<%= flash_class(key) %> closable"> -->
             <div class="ui green message closable">
               <i class = "close icon"></i>
               <%= value %>
             </div>
-          <% end %>
+          </div>
+          <div class="ui three wide column"></div>
         </div>
-        <div class="ui three wide column"></div>
-      </div>
+      <% end %>
     </div>
     <%= yield %>
   </body>
