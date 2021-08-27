@@ -1,47 +1,55 @@
 <div class="ui container">
-  <% if current_user %>
-    <h3>Welcome: <%= current_user.email %></h3>
-  <% else %>
-
-    <h1>Welcome to Photo App 6</h1>
-    <div class="ui horizontal divider"></div>
-
-
-    <div class="ui three column stackable grid">
-      <div class="ui centered row">
-        <div class="sixteen wide column">
-          <div class="ui segment jumbotron">
-            <h1>Welcome to Photo management app!</h1>
-            <h2>You will love managing your photos with our app.</h2>
-          </div>
-        </div>
-      </div>
-      <div class="ui centered row">
-        <div class="six wide column">
-          <div class="ui segment">
-            <h3>Premium Plan</h3>
-            <dl>
-              <dd>Unilimited image uploads</dd>
-              <dd>Responsive design</dd>
-              <dd>Access anywhere</dd>
-              <dd hidden>It must be hidden</dd>
-            </dl>
-            <button class="ui blue button">BUY</button>
-          </div>
-        </div>
-        <div class="six wide column">
-          <div class="ui segment">
-            <h3>Amaze Plan</h3>
-            <dl>
-              <dd>Unilimited image uploads</dd>
-              <dd>Responsive design</dd>
-              <dd>Access anywhere</dd>
-              <dd>Unlimited projects</dd>
-            </dl>
-            <button class="ui blue button">BUY</button>
-          </div>
-        </div>
-      </div>
+  <div class="ui one column stackable grid">
+    <div class="ui centered row">
     </div>
+    <% if current_user %>
+      <h3>Welcome: <%= current_user.email %></h3>
+    <% else %>
+      <h1>Welcome to Photo App 6</h1>
+      <div class="ui horizontal divider"></div>
+      <div class="ui three column stackable grid">
+        <div class="ui centered row">
+          <div class="sixteen wide column">
+            <div class="ui segment jumbotron">
+              <h1>Welcome to Photo management app!</h1>
+              <h2>You will love managing your photos with our app.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="ui centered row">
+          <div class="six wide column">
+            <div class="ui segment">
+              <h3>Premium Plan</h3>
+              <div class="ui">Price $10</div>
+              <dl>
+                <dd>Unilimited image uploads</dd>
+                <dd>Responsive design</dd>
+                <dd>Access anywhere</dd>
+                <dd hidden>It must be hidden</dd>
+              </dl>
+              <p>
+                <%= link_to 'Sign Up', new_user_registration_path, class: 'ui blue button' %>
+              </p>
+            </div>
+          </div>
+          <div class="six wide column">
+            <div class="ui segment">
+              <h3>Amaze Plan</h3>
+              <div class="ui">Price $20</div>
+              <dl>
+                <dd>Unilimited image uploads</dd>
+                <dd>Responsive design</dd>
+                <dd>Access anywhere</dd>
+                <dd>Unlimited projects</dd>
+              </dl>
+              <%# <button class="ui blue button">BUY</button> %>
+              <p>
+                <%= link_to 'Sign Up', new_user_registration_path, class: 'ui blue button' %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
+  </div>
 </div>
