@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   
   ActionMailer::Base.smtp_settings = {
-  :user_name => Rails.application.credentials.dig(:sendgrid, :user_name),
+  :user_name => 'apikey',
   :password => Rails.application.credentials.dig(:sendgrid, :password),
   :domain => 'heroku.com',
   :address => 'smtp.sendgrid.net',
@@ -130,4 +130,8 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Stripe configuration using test keys
+  # config.stripe.secret_key = Rails.application.credentials.stripe[:development][:secret_key]
+  # config.stripe.publishable_key = Rails.application.credentials.stripe[:development][:publishable_key]
 end
