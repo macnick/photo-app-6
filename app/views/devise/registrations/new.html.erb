@@ -1,5 +1,6 @@
 <script language="Javascript">
-  Stripe.setPublishableKey("<%= Rails.application.credentials.dig(:stripe, :test_secret_key) %>");
+  var stripe = Stripe("<%= Rails.application.credentials.dig(:stripe, :test_publishable_key) %>");
+  var elements = stripe.elements();
 </script>
 <div class="ui relaxed equal width grid">
   <div class="ui row">
@@ -7,7 +8,7 @@
     <div class="ui ten wide column segment">
       <h2 class="ui center aligned dividing header"><i class="signup icon"></i>Sign up</h2>
       <div class="<%= "error" if resource.errors.any? %>">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: "form", class: "ui form cc_form"}) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: "form", class: "ui form cc_form", id: "payment-form"}) do |f| %>
           <div class="ui error message">
             <%= devise_error_messages! %>
           </div>
@@ -54,6 +55,11 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- added following the instructions on https://stripe.com/docs/stripe-js/elements/migrating#setup -->
+            <div class="field">
+              <%= pay.label :card_number, "Billing Zip", data: {stripe: 'label'} %>
+              <%= pay.text_field :billing_zip, class: "ui", required: true, data: {stripe: 'address_zip'} %>
             </div>
           <% end%>
           <div class="ui left icon input">
